@@ -104,12 +104,107 @@ void ordenarMano(int v[], int tam){ /// Ordena los naipes de menor a mayor
     }
 }
 
-/// #1 - Jugar ------------------------------------------------------------------------------------------------------
-
-/// PRIMERA RONDA
-
-void primeraRonda(int v[], int tam){
+/// Opciones del menu -----------------------------------------------------------------------------------------------
 
 
+/// #1 - JUGAR
+
+void jugar(string &primerJugador, string &segundoJugador){
+
+    char rta;
+
+    cout << "EMBAUCADO" << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Antes de comenzar deben registrar sus nombres:";
+    cout << endl << endl;
+    cout <<"¿Nombre del Jugador 1? ";
+    cin >> primerJugador;
+    cout << "¿Nombre del Jugador 2? ";
+    cin >> segundoJugador;
+    cout << endl;
+    cout << "¿Confirmar nombres? (S/N) ";
+    cin >> rta;
+    cout << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+
+    if (rta == 'S' || rta == 's'){
+
+            primeraRonda(primerJugador, segundoJugador);
+
+    }
+        else if (rta == 'N' || rta == 'n'){
+            cout << "Nombres no confimados. Intente de nuevo" << endl << endl;
+            jugar(primerJugador, segundoJugador);
+        }
+
+    else{
+        cout << "Selección no reconocida. Intente de nuevo." << endl << endl;
+        jugar(primerJugador, segundoJugador);
+}
+
+}
+
+/// #2 - ESTADISTICAS
+
+
+/// #3 - CREDITOS
+
+void creditos(){
+
+    cout << "CRÉDITOS" << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "APELLIDO       NOMBRES     LEGAJOS" << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << " Laborde        Tomas       28895" << endl;
+    cout << " Alderete       Kevin       30199" << endl;
+    cout << "  Cayo          Nicole      30283" << endl << endl;
+
+}
+
+
+/// PRIMERA RONDA --------------------------------------------------------------------
+
+void primeraRonda(string primerJugador, string segundoJugador){
+
+    const int tam = 5;
+    int mano[tam];
+
+    int puntos1 = 0; /// acumuladores
+    int puntos2 = 0;
+
+    cout << "EMBAUCADO" << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "RONDA #1" << endl;
+    cout << primerJugador  << " Vs " << segundoJugador << endl << endl << endl;
+    cout << "+-------------------------+" << endl;
+    cout << "|                         |" << endl;
+    cout << "| " << primerJugador << " (" << puntos1 << " puntos)       |" << endl << endl;
+
+
+    cartaEmbaucadora(mano, tam);
+    generarMano;
+
+    do{
+        generarMano(mano, tam);
+    }
+    while(verificarMano(mano, tam) != true);
+
+    ordenarMano(mano, tam);
+    mostrarMano(mano, tam);
+
+
+    cout << endl << endl;
+
+    cout << "| " << segundoJugador << " (" << puntos2 << " puntos)       |" << endl << endl;
+    cout << "|  Embaucadora: " << cartaEmbaucadora << "         |" << endl;
+    cout << "|                         |" << endl;
+    cout << "+-------------------------+" << endl;
+
+    cout << endl;
+
+    cout << "Puntajes obtenidos:" << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << primerJugador << ": " << endl;
+    cout << segundoJugador << ": " << endl;
 
 }
