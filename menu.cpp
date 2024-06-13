@@ -6,59 +6,52 @@
 
 using namespace std;
 
-/// #1 - JUGAR
-
-int jugar(){
+void menu(){
 
     string primerJugador, segundoJugador;
-    char rta;
+    char opcion;
 
     cout << "EMBAUCADO" << endl;
-    cout << "------------------------------------------------------------------------" << endl;
-    cout << "Antes de comenzar deben registrar sus nombres:";
-    cout << endl << endl;
-    cout <<"¿Nombre del Jugador 1? ";
-    cin >> primerJugador;
-    cout << "¿Nombre del Jugador 2? ";
-    cin >> segundoJugador;
-    cout << endl;
-    cout << "¿Confirmar nombres? (S/N) ";
-    cin >> rta;
-    cout << endl;
+    cout << "---------------------" << endl;
+    cout << "1- JUGAR" << endl;
+    cout << "2- ESTADÍSTICAS" << endl;
+    cout << "3 - CRÉDITOS" << endl;
+    cout << "---------------------" << endl;
+    cout << "0- SALIR" << endl;
 
-    if (rta == 'S' || rta == 's'){
+    cout << "Ingrese una opcion: ";
+    cin >> opcion;
 
-        /// Llamaria a la funcion primeraRonda
+    rlutil::cls();
 
+    switch(opcion){
+        
+        case '1':
+        jugar(primerJuador, segundoJugador);
+        break;
+
+        case '2':
+        /// Estadisticas
+        break;
+
+        case '3':
+        creditos();
+        break;
+
+        case '0':
+
+        rlutil::cls();
+        cout << "Gracias por jugar nuestro juego." << endl;
+        rltuil::anykey("Presione una tecla para continuar...");
+        cout << endl;
+            
+        return;
+
+        default:
+        rlutil::cls();
+        rltuil::anykey("Opcion incorrecta. Intente de nuevo.");
+        cout << endl;  
+
+        break;
     }
-        else if (rta == 'N' || rta == 'n'){
-
-            cout << "Nombres no confimados. Intente de nuevo" << endl << endl;
-            jugar();
-        }
-
-    else{
-        cout << "Selección no reconocida. Intente de nuevo." << endl << endl;
-        jugar();
-}
-
-    cout << "------------------------------------------------------------------------" << endl;
-
-}
-
-/// #2 - ESTADISTICAS
-
-
-/// #3 - CREDITOS
-
-void creditos(){
-
-    cout << "CRÉDITOS" << endl;
-    cout << "------------------------------------------------------------------------" << endl;
-    cout << "APELLIDO       NOMBRES     LEGAJOS" << endl;
-    cout << "------------------------------------------------------------------------" << endl;
-    cout << " Laborde        Tomas       28895" << endl;
-    cout << " Alderete       Kevin       30199" << endl;
-    cout << "  Cayo          Nicole      30283" << endl << endl;
-
 }
