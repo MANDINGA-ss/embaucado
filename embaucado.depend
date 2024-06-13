@@ -1,0 +1,121 @@
+# depslib dependency file v1.0
+1718202811 source:/home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/main.cpp
+	<iostream>
+	"menu.h"
+	"rlutil.h"
+	"funciones.h"
+
+1717178443 /home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/Funciones.h
+
+1718203398 source:/home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/funciones.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"menu.h"
+
+1718152248 /home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/funciones.h
+	<iostream>
+
+1718201881 source:/home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/menu.cpp
+	"menu.h"
+	"funciones.h"
+	<iostream>
+	<cstdlib>
+	"rlutil.h"
+
+1718112839 /home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/menu.h
+
+1717949417 source:/home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/jugar.cpp
+	"menu.h"
+	<iostream>
+
+1571584339 /home/nicole/Descargas/PROGRAMACION I/miPrimerProjecto/rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718217401 source:/home/nicole/Descargas/PROGRAMACION I/Embaucado_Proyecto/main.cpp
+	<iostream>
+	"menu.h"
+	"rlutil.h"
+	"funciones.h"
+
+1718216253 /home/nicole/Descargas/PROGRAMACION I/Embaucado_Proyecto/menu.h
+
+1571584339 /home/nicole/Descargas/PROGRAMACION I/Embaucado_Proyecto/rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718152248 /home/nicole/Descargas/PROGRAMACION I/Embaucado_Proyecto/funciones.h
+	<iostream>
+
+1718217547 source:/home/nicole/Descargas/PROGRAMACION I/Embaucado_Proyecto/funciones.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"menu.h"
+
+1718217547 source:/home/nicole/Descargas/PROGRAMACION I/Embaucado_Proyecto/menu.cpp
+	"menu.h"
+	"funciones.h"
+	<iostream>
+	<cstdlib>
+	"rlutil.h"
+
+1718217547 source:d:\embaucado_proyecto-20240613t140643z-001\embaucado_proyecto\funciones.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"menu.h"
+
+1718152248 d:\embaucado_proyecto-20240613t140643z-001\embaucado_proyecto\funciones.h
+	<iostream>
+
+1718216253 d:\embaucado_proyecto-20240613t140643z-001\embaucado_proyecto\menu.h
+
+1718217401 source:d:\embaucado_proyecto-20240613t140643z-001\embaucado_proyecto\main.cpp
+	<iostream>
+	"menu.h"
+	"rlutil.h"
+	"funciones.h"
+
+1571584339 d:\embaucado_proyecto-20240613t140643z-001\embaucado_proyecto\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718217749 source:d:\embaucado_proyecto-20240613t140643z-001\embaucado_proyecto\menu.cpp
+	"menu.h"
+	"funciones.h"
+	<iostream>
+	<cstdlib>
+	"rlutil.h"
+
