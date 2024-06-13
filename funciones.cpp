@@ -175,13 +175,11 @@ void primeraRonda(string primerJugador, string segundoJugador){
     cout << "EMBAUCADO" << endl;
     cout << "------------------------------------------------------------------------" << endl;
     cout << "RONDA #1" << endl;
-    cout << primerJugador  << " Vs " << segundoJugador << endl << endl << endl;
+    cout << primerJugador  << " Vs " << segundoJugador << endl << endl;
     cout << "+-------------------------+" << endl;
     cout << "|                         |" << endl;
-    cout << "| " << primerJugador << " (" << puntos1 << " puntos)       |" << endl << endl;
+    cout << "| " << primerJugador << " (" << puntos1 << " puntos)       |" << endl;
 
-
-    cartaEmbaucadora(mano, tam);
     generarMano;
 
     do{
@@ -193,14 +191,16 @@ void primeraRonda(string primerJugador, string segundoJugador){
     mostrarMano(mano, tam);
 
 
-    cout << endl << endl;
+    cout << "|                         |" << endl;
+    cout << "|                         |" << endl;
+    cout << "|                         |" << endl;
 
     cout << "| " << segundoJugador << " (" << puntos2 << " puntos)       |" << endl << endl;
     cout << "|  Embaucadora: " << cartaEmbaucadora << "         |" << endl;
     cout << "|                         |" << endl;
     cout << "+-------------------------+" << endl;
 
-    cout << endl;
+    cout << endl << endl;
 
     cout << "Puntajes obtenidos:" << endl;
     cout << "------------------------------------------------------------------------" << endl;
@@ -208,3 +208,4 @@ void primeraRonda(string primerJugador, string segundoJugador){
     cout << segundoJugador << ": " << endl;
 
 }
+
