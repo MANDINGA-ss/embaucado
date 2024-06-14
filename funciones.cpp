@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include "funciones.h"
 #include "menu.h"
+#include "rlutil.h"
 
 using namespace std;
 
@@ -20,51 +21,69 @@ void generarMano(int v[], int tam){ /// Genera la mano
 void mostrarMano(int v[], int tam){ /// Muestra la mano
 
     int valor;
-    string nombre;
-    string palo;
+    string carta, figura;
 
     for(int i = 0; i < tam; i++) {
 
-        obtenerCarta(v[i], valor, nombre, palo);
-        cout << nombre << " de " << palo << endl;
+        obtenerCarta(v[i], valor, carta, figura);
+        cout << "|  " << carta << " de " << figura << "         |"<< endl;
 
     }
 }
 
-/// Las cartas con sus figuras y naipes con sus valores correspondientes
+void obtenerCarta(int id, int &valor, string &carta, string &figura) { /// Tiene las figuras y los valores con sus cartas correspondientes
 
-void obtenerCarta(int id, int &valor, string &nombre, string &palo) {
+    const string figuras[4] = {"Corazones", "Diamantes", "Treboles", "Picas"};
 
-    const string palos[] = {"Corazones", "Diamantes", "Treboles", "Picas"};
+    const string cartas[5] = {"A", "10", "J", "Q", "K"};
+    const int valoresCartas[5] = {20, 10, 11, 12, 15};
 
-    const string nombresDeLosNaipes[] = {"A", "10", "J", "Q", "K"};
-    const int valoresDeLosNaipes[] = {20, 10, 11, 12, 15};
+    int c = 0;
+    int p = 0;
 
-    int p = id / 5; /// Palo de la carta
-    int n = id % 5; /// Valor del naipe/carta
+    /// Calcula el palo de la carta 1x1
 
-    nombre = nombresDeLosNaipes[n]; /// Se le asigna como el nombre de la carta corresp, al valor 'n'
-    palo = palos[p]; /// Se le asigna como palo corresp. al valor 'p'
-    valor = valoresDeLosNaipes[n]; /// Se le asigna como el valor numero corresp. al valor 'n'
+    for(int i = 0; i < 5; i++){
+        if(id >= 5){
+            id -= 5;
+            p++;
+        }
+        else{
+            break;
+        }
+    }
+
+    /// Calcula el valor de la carta 1x1
+
+    for(int i = 0; i < 4; i++){
+        if(id > 0){
+            id--;
+            c++;
+        }
+        else{
+            break;
+        }
+    }
+
+    valor = valoresCartas[c];
+    carta = cartas[c];
+    figura = figuras[p];
 }
 
-void cartaEmbaucadora (int v[], int tam){
+void embaucadora (int v[], int tam, string &figura){ /// Genera la carta embaucadora
 
-    int nrosAleat = rand() % 4; /// Genera 4 numeros alteatorios desde el 0 al 3 para seleccionar el palo
-
-    int id = nrosAleat * 5; /// Calcula el indice desde la primera carta del palo y segun el nro aleatorio que toque dentro del id va a ir mostrando el palo correspondiente
-
+    int numerosAleatorios = rand() % 4; /// Genera 4 numeros aleatorios desde el 0 al 3 para seleccionar el palo
+    int id = numerosAleatorios * 5;
     int valor;
-    string nombre, palo;
+    string carta;
 
-    obtenerCarta(id, valor, nombre, palo);
+    obtenerCarta(id, valor, carta, figura);
 
-    cout << "Carta embaucadora: " << palo << endl;
+    cout << figura;
 
 }
 
-/// Primera Ronda #1 -------------------------------------------------------------------------------------------------------------------------------------------
-
+/// PRIMERA RONDA -----------------------------------------------------------------------------------------------------
 
 void primeraRonda(string primerJugador, string segundoJugador){
 
@@ -77,14 +96,20 @@ void primeraRonda(string primerJugador, string segundoJugador){
     int puntos1 = 0; /// Puntos del Jugador 1
     int puntos2 = 0; /// Puntos del jugador 2
 
-    ///
+    /// Variables de la funcion
     string figura1, figura2;
     int valor;
     string carta;
 
+    /// Opcion si el jugador quiere cambiar la carta embaucadora si elije que si l acambia
+    string embauca;
+
+
+   for (int y = 1; y <= 3; y++){
+
     cout << "EMBAUCADO" << endl;
     cout << "------------------------------------------------------------------------" << endl;
-    cout << "RONDA #1" << endl;
+    cout << "RONDA #"<<y << endl;
     cout << primerJugador  << " Vs " << segundoJugador << endl << endl;
     cout << "+-------------------------+" << endl;
     cout << "|                         |" << endl;
@@ -132,22 +157,53 @@ void primeraRonda(string primerJugador, string segundoJugador){
     cout << "|                         |" << endl;
     cout << "+-------------------------+" << endl;
 
+
+/// Cambio de carta embaucadora -----------------------------------------------------------------------------------------
+
+    if(y > 1){
+
+    cout << primerJugador << ", quiere cambiar la carta embaucadora? (pica) ";
+
+    cout << "(S/N): ";
+    cin >> embauca;
+
+    cout << endl;
+
+    if(embauca == "S" || embauca == "s"){
+
+    cout << "+-------------------------+" << endl;
+    cout << "|                         |" << endl;
+    cout << "| Nueva Embaucadora: ";
+
+    embaucadora(mano1, tam, figura2); /// Muestra la carta embaucadora - figura 1
+
+    cout << "|" << endl;
+
+    cout << "|                         |" << endl;
+    cout << "+-------------------------+" << endl;
+    rlutil :: anykey();
+
+    }
+
+    }
     cout << endl << endl;
 
     cout << "Puntajes obtenidos:" << endl;
     cout << "------------------------------------------------------------------------" << endl;
 
+
 /// Puntos del Jugador 1
 
     cout << primerJugador << ":"; /// incio del texto
-    
+
     for(int i = 0; i < tam; i++){
     obtenerCarta(mano1[i], valor, carta, figura2);
+
         if(figura2 == figura1){
         puntos1 -= 0;
         }
         else{
-            cout << " + " << valor;
+        cout << " + " << valor;
         puntos1+=valor;
         }
     }
@@ -157,9 +213,10 @@ void primeraRonda(string primerJugador, string segundoJugador){
 /// Puntos del Jugador 2
 
     cout << segundoJugador << ": "; /// incio del texto
-    
-    for(int i = 0; i < tam; i++){
-    obtenerCarta(mano2[i], valor, carta, figura2);
+
+    for(int j = 0; j < tam; j++){
+    obtenerCarta(mano2[j], valor, carta, figura2);
+
         if(figura2 == figura1){
         puntos2 -= 0;
         }
@@ -170,11 +227,17 @@ void primeraRonda(string primerJugador, string segundoJugador){
     }
 
     cout << " = " << puntos2 << " puntos" << endl; /// fin del texto
+    cout << endl;
+    rlutil::anykey("Presione una tecla para continuar...");
+    cout << endl << endl;
+    }
 
 }
 
+/// SEGUNDA RONDA -----------------------------------------------------------------------------------------------------
 
-/// La organizacion general de las manos ------------------------------------------------------------------------------------------------------------------
+
+/// La organizacion general de las manos -----------------------------------------------------------------------------
 
 int contarNumeros(int v[], int tam, int numero){ /// Cuenta si algun numero entre las cartas se repite
 
@@ -215,7 +278,7 @@ void ordenarMano(int v[], int tam){ /// Ordena los naipes de menor a mayor
     }
 }
 
-/// Opciones del menu -----------------------------------------------------------------------------------------------
+/// Opciones del menu ------------------------------------------------------------------------------------------------------
 
 
 /// #1 - JUGAR
@@ -269,5 +332,4 @@ void creditos(){
     cout << " Laborde        Tomas       28895" << endl;
     cout << " Alderete       Kevin       30199" << endl;
     cout << "  Cayo          Nicole      30283" << endl << endl;
-
 }
