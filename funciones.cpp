@@ -63,7 +63,115 @@ void cartaEmbaucadora (int v[], int tam){
 
 }
 
-/// La organizacion general de las manos -----------------------------------------------------------------------------
+/// Primera Ronda #1 -------------------------------------------------------------------------------------------------------------------------------------------
+
+
+void primeraRonda(string primerJugador, string segundoJugador){
+
+    /// Tamaño del vector
+    const int tam = 5;
+    int mano1[tam];
+    int mano2[tam];
+
+    /// Acumuladores de puntos de cada jugador
+    int puntos1 = 0; /// Puntos del Jugador 1
+    int puntos2 = 0; /// Puntos del jugador 2
+
+    ///
+    string figura1, figura2;
+    int valor;
+    string carta;
+
+    /// Acumulador que guarda las no iguales a la embaucadora para despues sumarlos y asi obtener el puntaje de cada jugador
+    int total = 0;
+
+    cout << "EMBAUCADO" << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "RONDA #1" << endl;
+    cout << primerJugador  << " Vs " << segundoJugador << endl << endl;
+    cout << "+-------------------------+" << endl;
+    cout << "|                         |" << endl;
+    cout << "| " << primerJugador << " (" << puntos1 << " puntos)       |" << endl;
+
+    /// Mano del Jugador #1
+    generarMano(mano1, tam);
+
+    /// Verifica si la mano no tiene cartas repetidas
+    while(verificarMano(mano1, tam) != true){
+        generarMano(mano1, tam);
+    }
+
+    /// Ordena la mano
+    ordenarMano(mano1, tam);
+
+    /// Muestra ya la mano ordenada por la funcion anterior
+    mostrarMano(mano1, tam);
+
+
+    cout << "|                         |" << endl;
+    cout << "|                         |" << endl;
+    cout << "|                         |" << endl;
+
+    cout << "| " << segundoJugador << " (" << puntos2 << " puntos)       |" << endl;
+
+    /// Mano del Jugador #2
+    generarMano(mano2, tam);
+
+    /// Verifica si la mano no tiene cartas repetidas
+    while(verificarMano(mano2, tam) != true){
+        generarMano(mano2, tam);
+    }
+
+    /// Ordena la mano
+    ordenarMano(mano2, tam);
+
+    /// Muestra ya la mano ordenada por la funcion anterior
+    mostrarMano(mano2, tam);
+
+    cout << "|                         |" << endl;
+    cout << "|  Embaucadora: ";
+    embaucadora(mano1, tam, figura1); /// Muestra la carta embaucadora - figura 1
+    cout << "  |" << endl;
+    cout << "|                         |" << endl;
+    cout << "+-------------------------+" << endl;
+
+    cout << endl << endl;
+
+    cout << "Puntajes obtenidos:" << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+
+
+
+    /// Puntos del Jugador 1
+    for(int i = 0; i < tam; i++){
+    obtenerCarta(mano1[i], valor, carta, figura2);
+        if(figura2 == figura1){
+        puntos1 -= 0;
+        }
+        else{
+        puntos1+=valor;
+        }
+    }
+
+    cout << primerJugador << ": " << puntos1 << " puntos" << endl;
+
+    /// Puntos del Jugador 1
+    for(int i = 0; i < tam; i++){
+    obtenerCarta(mano2[i], valor, carta, figura2);
+        if(figura2 == figura1){
+        puntos2 -= 0;
+        }
+        else if(figura2 != figura1){
+        puntos2+=valor;
+        }
+    }
+
+    cout << segundoJugador << ": " << puntos2 << " puntos" << endl;
+
+}
+
+
+/// La organizacion general de las manos ------------------------------------------------------------------------------------------------------------------
 
 int contarNumeros(int v[], int tam, int numero){ /// Cuenta si algun numero entre las cartas se repite
 
@@ -160,52 +268,3 @@ void creditos(){
     cout << "  Cayo          Nicole      30283" << endl << endl;
 
 }
-
-
-/// PRIMERA RONDA --------------------------------------------------------------------
-
-void primeraRonda(string primerJugador, string segundoJugador){
-
-    const int tam = 5;
-    int mano[tam];
-
-    int puntos1 = 0; /// acumuladores
-    int puntos2 = 0;
-
-    cout << "EMBAUCADO" << endl;
-    cout << "------------------------------------------------------------------------" << endl;
-    cout << "RONDA #1" << endl;
-    cout << primerJugador  << " Vs " << segundoJugador << endl << endl;
-    cout << "+-------------------------+" << endl;
-    cout << "|                         |" << endl;
-    cout << "| " << primerJugador << " (" << puntos1 << " puntos)       |" << endl;
-
-    generarMano;
-
-    do{
-        generarMano(mano, tam);
-    }
-    while(verificarMano(mano, tam) != true);
-
-    ordenarMano(mano, tam);
-    mostrarMano(mano, tam);
-
-
-    cout << "|                         |" << endl;
-    cout << "|                         |" << endl;
-    cout << "|                         |" << endl;
-
-    cout << "| " << segundoJugador << " (" << puntos2 << " puntos)       |" << endl << endl;
-    cout << "|  Embaucadora: " << cartaEmbaucadora << "         |" << endl;
-    cout << "|                         |" << endl;
-    cout << "+-------------------------+" << endl;
-
-    cout << endl << endl;
-
-    cout << "Puntajes obtenidos:" << endl;
-    cout << "------------------------------------------------------------------------" << endl;
-    cout << primerJugador << ": " << endl;
-    cout << segundoJugador << ": " << endl;
-
-}
-
