@@ -137,33 +137,39 @@ void primeraRonda(string primerJugador, string segundoJugador){
     cout << "Puntajes obtenidos:" << endl;
     cout << "------------------------------------------------------------------------" << endl;
 
+/// Puntos del Jugador 1
 
-
-    /// Puntos del Jugador 1
+    cout << primerJugador << ":"; /// incio del texto
+    
     for(int i = 0; i < tam; i++){
     obtenerCarta(mano1[i], valor, carta, figura2);
         if(figura2 == figura1){
         puntos1 -= 0;
         }
         else{
+            cout << " + " << valor;
         puntos1+=valor;
         }
     }
 
-    cout << primerJugador << ": " << puntos1 << " puntos" << endl;
+    cout << " = " << puntos1 << " puntos" << endl; /// fin del texto
 
-    /// Puntos del Jugador 1
+/// Puntos del Jugador 2
+
+    cout << segundoJugador << ": "; /// incio del texto
+    
     for(int i = 0; i < tam; i++){
     obtenerCarta(mano2[i], valor, carta, figura2);
         if(figura2 == figura1){
         puntos2 -= 0;
         }
-        else if(figura2 != figura1){
+        else{
+        cout << " + " << valor;
         puntos2+=valor;
         }
     }
 
-    cout << segundoJugador << ": " << puntos2 << " puntos" << endl;
+    cout << " = " << puntos2 << " puntos" << endl; /// fin del texto
 
 }
 
