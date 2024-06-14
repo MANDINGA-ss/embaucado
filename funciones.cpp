@@ -82,9 +82,6 @@ void primeraRonda(string primerJugador, string segundoJugador){
     int valor;
     string carta;
 
-    /// Acumulador que guarda las no iguales a la embaucadora para despues sumarlos y asi obtener el puntaje de cada jugador
-    int total = 0;
-
     cout << "EMBAUCADO" << endl;
     cout << "------------------------------------------------------------------------" << endl;
     cout << "RONDA #1" << endl;
