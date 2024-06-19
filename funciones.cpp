@@ -65,7 +65,6 @@ void cartaEmbaucadora (int v[], int tam){
 
 /// Primera Ronda #1 -------------------------------------------------------------------------------------------------------------------------------------------
 
-
 void primeraRonda(string primerJugador, string segundoJugador){
 
     /// Tamaño del vector
@@ -90,20 +89,8 @@ void primeraRonda(string primerJugador, string segundoJugador){
     cout << "|                         |" << endl;
     cout << "| " << primerJugador << " (" << puntos1 << " puntos)       |" << endl;
 
-    /// Mano del Jugador #1
     generarMano(mano1, tam);
-
-    /// Verifica si la mano no tiene cartas repetidas
-    while(verificarMano(mano1, tam) != true){
-        generarMano(mano1, tam);
-    }
-
-    /// Ordena la mano
-    ordenarMano(mano1, tam);
-
-    /// Muestra ya la mano ordenada por la funcion anterior
     mostrarMano(mano1, tam);
-
 
     cout << "|                         |" << endl;
     cout << "|                         |" << endl;
@@ -111,18 +98,7 @@ void primeraRonda(string primerJugador, string segundoJugador){
 
     cout << "| " << segundoJugador << " (" << puntos2 << " puntos)       |" << endl;
 
-    /// Mano del Jugador #2
     generarMano(mano2, tam);
-
-    /// Verifica si la mano no tiene cartas repetidas
-    while(verificarMano(mano2, tam) != true){
-        generarMano(mano2, tam);
-    }
-
-    /// Ordena la mano
-    ordenarMano(mano2, tam);
-
-    /// Muestra ya la mano ordenada por la funcion anterior
     mostrarMano(mano2, tam);
 
     cout << "|                         |" << endl;
@@ -147,7 +123,6 @@ void primeraRonda(string primerJugador, string segundoJugador){
         puntos1 -= 0;
         }
         else{
-            cout << " + " << valor;
         puntos1+=valor;
         }
     }
@@ -164,55 +139,12 @@ void primeraRonda(string primerJugador, string segundoJugador){
         puntos2 -= 0;
         }
         else{
-        cout << " + " << valor;
         puntos2+=valor;
         }
     }
 
     cout << " = " << puntos2 << " puntos" << endl; /// fin del texto
 
-}
-
-
-/// La organizacion general de las manos ------------------------------------------------------------------------------------------------------------------
-
-int contarNumeros(int v[], int tam, int numero){ /// Cuenta si algun numero entre las cartas se repite
-
-    int cont = 0;
-    for(int i = 0; i < tam; i++){
-        if(v[i] == numero){
-        cont++;
-        }
-    }
-
-    return cont; /// devuelve cuantos numeros dentro del vector estan repetidos
-}
-
-bool verificarMano(int v[], int tam){ /// Si llevan a haber dos cartas iguales returna true sino false
-
-    for(int i = 0; i < tam; i++){
-
-        if(contarNumeros(v,tam,v[i]) > 1){
-
-            return false; /// Si devuelve 'false' es porque el contador es mayor a 1 osea que si hay numeros que se repiten
-        }
-    }
-    return true; /// Si devuelve 'true' es porque el cont esta en 0, lo que signific que los numeros no se repiten
-}
-
-void ordenarMano(int v[], int tam){ /// Ordena los naipes de menor a mayor
-
-    int aux;
-
-    for (int i= 0; i < tam; i++){
-        for (int j= i +1; j < tam; j++){
-            if(v[j] < v[i]){
-                aux = v[j];
-                v[j]=v[i];
-                v[i]=aux;
-            }
-        }
-    }
 }
 
 /// Opciones del menu -----------------------------------------------------------------------------------------------
