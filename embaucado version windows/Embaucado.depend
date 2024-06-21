@@ -1,0 +1,88 @@
+# depslib dependency file v1.0
+1718117523 source:c:\users\tomas\onedrive\escritorio\asff\embaucado\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+
+1718117977 c:\users\tomas\onedrive\escritorio\asff\embaucado\menuheader.h
+
+1718119652 source:c:\users\tomas\onedrive\escritorio\asff\embaucado\menu.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+
+1718117523 source:c:\users\alumno\downloads\embaucado ver2\embaucado\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+
+1718117977 c:\users\alumno\downloads\embaucado ver2\embaucado\menuheader.h
+
+1718386561 source:c:\users\alumno\downloads\embaucado ver2\embaucado\menu.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+	"rlutil.h"
+
+1718327871 c:\users\alumno\downloads\embaucado ver2\embaucado\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718387176 source:c:\users\tomas\onedrive\escritorio\embaucadover2-main\embaucadover2-main\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+
+1718387176 c:\users\tomas\onedrive\escritorio\embaucadover2-main\embaucadover2-main\menuheader.h
+
+1718978593 source:c:\users\tomas\onedrive\escritorio\embaucadover2-main\embaucadover2-main\menu.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+	"rlutil.h"
+
+1718387176 c:\users\tomas\onedrive\escritorio\embaucadover2-main\embaucadover2-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718387176 source:c:\users\tomas\onedrive\escritorio\embaucadover2-main\embaucado version windows\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+
+1718978798 c:\users\tomas\onedrive\escritorio\embaucadover2-main\embaucado version windows\menuheader.h
+
