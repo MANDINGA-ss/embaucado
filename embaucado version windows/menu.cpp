@@ -156,7 +156,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                 cout<<"(S/N): ";
                 cin>>respuestaembauc;
 
-                if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[1]>20){
+                if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[0]>20){
 
                     puntosacu[0]-=20;
                     auxembauc=palo[numerorandom(tam2)];
@@ -167,7 +167,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                     cout<<"(S/N): ";
                     cin>>respuestaembauc;
 
-                    if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[2]>20)
+                    if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[1]>20)
                     {
                         puntosacu[1]-=20;
                         auxembauc=palo[numerorandom(tam2)];
@@ -180,9 +180,9 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                 cout<<nombre2<<", quiere cambiar la carta embaucadora? ";
                 cout<<"(S/N): ";
                 cin>>respuestaembauc;
-                if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[2]>20)
+                if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[1]>20)
                 {
-                    puntosacu[2]-=20;
+                    puntosacu[1]-=20;
                     auxembauc=palo[numerorandom(tam2)];
                 }
                 else if(respuestaembauc=="n"||respuestaembauc=="N")
@@ -190,9 +190,9 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                     cout<<nombre1<<", quiere cambiar la carta embaucadora?"<<endl;
                     cout<<"(S/N): ";
                     cin>>respuestaembauc;
-                    if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[1]>20)
+                    if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[0]>20)
                     {
-                        puntosacu[1]-=20;
+                        puntosacu[0]-=20;
                         auxembauc=palo[numerorandom(tam2)];
                     }
                 }
