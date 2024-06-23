@@ -6,7 +6,7 @@
 #include "rlutil.h"
 
 using namespace std;
-///--------------MENU-----------------------
+
 void menu ()
 {
     string nombre1, nombre2;
@@ -59,9 +59,7 @@ void menu ()
         }
     }
 }
-///----------------------------------------------------------------------------------------
 
-//--------------------------CREDITOS-----------------------------------------------------------
 void creditos()
 {
       cout << "CREDITOS" << endl;
@@ -76,9 +74,9 @@ void creditos()
 
     system("pause");
 }
-//-------------------------------------------------------------------------------------------------
 
-//funcion para sacar un numero random
+
+
 int numerorandom(int taman)
 {
     return rand() %taman + 0;
@@ -87,7 +85,7 @@ int numerorandom(int taman)
 
 
 
-///------------------------ funcion de la partida   ------------------
+
 int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
 {
     const int tam=5;
@@ -100,8 +98,6 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     string respuestaembauc;
     string carta[tam];
     string palo[tam2];
-
-    /// aca en en cada espacio del  vector guarda los numeros y palo
 
     carta[0]="10";
     carta[1]="J";
@@ -136,12 +132,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     }
     ///rlutil::cls();
     system("cls");
-
-/// esta variable es para guardar la carta embaucadora en una auxiliar
-
   string auxembauc;
-
-/// aca comienza el juego con las 3 rondas
 
     for(int i=1; i<=3; i++){
 
@@ -149,7 +140,6 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
             auxembauc=palo[numerorandom(tam2)];
         }
 
-    ///pregunta por la ronda para saber si pide cambiar la carta
         else if(i==2){
 
                 cout<<nombre1<<", quiere cambiar la carta embaucadora?";
@@ -199,8 +189,6 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                 ///rlutil::cls();
                 ///system("cls");
             }
-
-    /// empieza la ronda y el i es para que marque el numero de ronda con el reloj del for
         cout<<"RONDA "<<i<<endl;
         cout<<"===================="<<endl;
         cout<<"    JUGADOR 1      |"<<endl;
@@ -208,8 +196,6 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
         int auxcarta;
         for (int j1=1;j1<=5;j1++)
             {
-
-            ///aca calcula el palo y el  numero de la carta para poder acumularlo
                 auxpalo=palo[numerorandom(tam2)];
                 auxcarta=numerorandom(tam);
                 cout<<carta[auxcarta]<<" "<<auxpalo<<endl;
@@ -240,7 +226,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
         system("cls");
 
 }
-///luego de que termina el for de 3 muestra el ganador
+
     cout<<"==================================="<<endl;
     cout<<"GANADOR                            "<<endl;
     cout<<"el ganador es: ";
@@ -264,7 +250,6 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
 
 }
 
-///----------funcion para las estadisticas--------------------
 int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
 {
     int cero;
@@ -294,5 +279,3 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
         system("cls");
     }
 }
-
-///--------------------------------------------------------------

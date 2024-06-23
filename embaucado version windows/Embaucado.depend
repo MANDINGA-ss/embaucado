@@ -86,3 +86,35 @@
 
 1718978798 c:\users\tomas\onedrive\escritorio\embaucadover2-main\embaucado version windows\menuheader.h
 
+1719086833 source:c:\users\tomas\onedrive\escritorio\embaucado-main\embaucado-main\embaucado version windows\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+
+1719179344 c:\users\tomas\onedrive\escritorio\embaucado-main\embaucado-main\embaucado version windows\menuheader.h
+	<stdio.h>
+
+1719104446 source:c:\users\tomas\onedrive\escritorio\embaucado-main\embaucado-main\embaucado version windows\menu.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<string>
+	"menuheader.h"
+	"rlutil.h"
+
+1719086833 c:\users\tomas\onedrive\escritorio\embaucado-main\embaucado-main\embaucado version windows\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
