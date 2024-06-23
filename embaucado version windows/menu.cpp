@@ -203,7 +203,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     /// empieza la ronda y el i es para que marque el numero de ronda con el reloj del for
         cout<<"RONDA "<<i<<endl;
         cout<<"===================="<<endl;
-        cout<<"    JUGADOR 1      |"<<endl;
+        cout<<nombre1<<" ("<<puntosacu[0]<<" puntos)"<<endl;
         string auxpalo;
         int auxcarta;
         for (int j1=1;j1<=5;j1++)
@@ -221,7 +221,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
         puntJ1[i-1]=puntosacu[0];
         cout<<"PUNTOS DEL JUGADOR 1: "<<puntosacu[0]<<endl;
         cout<<"===================="<<endl;
-        cout<<"    JUGADOR 2      |"<<endl;
+        cout<<nombre2<<" ("<<puntosacu[1]<<" puntos)"<<endl;
         for (int j2=1;j2<=5 ;j2++ )
             {
                 auxpalo=palo[numerorandom(tam2)];
@@ -271,7 +271,7 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     int acumulador1=0;
     int acumulador2=0;
 
-    cout<<"ESTADÍSTICAS"<<endl;
+    cout<<"EMBAUCADO"<<endl;
     cout<<"========================================================================"<<endl<<endl;
     cout <<"RONDA       "<<nombre1<<"       "<<nombre2<<endl;
     cout<<"------------------------------------------------------------------------"<<endl<<endl;
