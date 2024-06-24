@@ -275,7 +275,7 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     cout<<"========================================================================"<<endl<<endl;
     cout <<"RONDA       "<<nombre1<<"       "<<nombre2<<endl;
     cout<<"------------------------------------------------------------------------"<<endl<<endl;
-    for(int x=0;x<3;x++){
+    for(int x=1;x<=3;x++){
         cout<<x+1<<"           "<<puntJ1[x]<<"       "<<puntJ2[x]<<endl;
         acumulador1+=puntJ1[x];
         acumulador2+=puntJ2[x];
