@@ -25,8 +25,8 @@ void menu ()
     cout<<"0 - Salir"<<endl << endl;
     cout << "Ingrese una opción: ";
     cin>>opcion;
-    rlutil::cls();
-    ///system("cls");
+    ///rlutil::cls();
+    system("cls");
     switch (opcion)
     {
     case 1:
@@ -42,22 +42,24 @@ void menu ()
     case 0:
         cout<<"¿Esta seguro que quiere salir del juego? (S/N): ";
         cin>>confirmacion;
+        
         if(confirmacion=='S'||confirmacion=='s'){
-            rlutil::cls();
-            ///system("cls");
+            ///rlutil::cls();
+            system("cls");
             cout << "Gracias por jugar nuestro juego! Presione una tecla para continuar." << endl;
             return;
         }
         else{
-            rlutil::cls();
+            ///rlutil::cls();
+            system("cls");
             cout<<"Volviendo al menu principal..."<<endl<<endl;
         }
         break;
 
     default:
 
-        rlutil::cls();
-        ///system("cls");
+        ///rlutil::cls();
+        system("cls");
         cout<<"Opcion incorrecta, intente de nuevo"<<endl<<endl;
         break;
 
@@ -263,6 +265,7 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     cout<<"========================================================================"<<endl<<endl;
     cout <<"RONDA       "<<nombre1<<"       "<<nombre2<<endl;
     cout<<"------------------------------------------------------------------------"<<endl<<endl;
+    
     ///sus puntajes x cada ronda
     for(int x=0;x<3;x++){
         cout<<x+1<<"           "<<puntJ1[x]<<"       "<<puntJ2[x]<<endl;
