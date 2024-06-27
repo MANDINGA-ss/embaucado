@@ -162,8 +162,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     ///pregunta por la ronda para saber si pide cambiar la carta
         else if(i==2){
 
-                cout<<nombre1<<", quiere cambiar la carta embaucadora?";
-                cout<<"(S/N): ";
+                cout<<nombre1<<", quiere cambiar la carta embaucadora? (S/N): ";
                 cin>>respuestaembauc;
 
                 if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[0]>20){
@@ -173,8 +172,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                 }
                 else if(respuestaembauc=="n"||respuestaembauc=="N"){
 
-                    cout<<nombre2<<", quiere cambiar la carta embaucadora?";
-                    cout<<"(S/N): ";
+                    cout<<nombre2<<", quiere cambiar la carta embaucadora? (S/N): ";
                     cin>>respuestaembauc;
 
                     if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[1]>20)
@@ -187,8 +185,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
 
         else
             {
-                cout<<nombre2<<", quiere cambiar la carta embaucadora? ";
-                cout<<"(S/N): ";
+                cout<<nombre2<<", quiere cambiar la carta embaucadora? (S/N): ";
                 cin>>respuestaembauc;
                 if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[1]>20)
                 {
@@ -197,8 +194,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                 }
                 else if(respuestaembauc=="n"||respuestaembauc=="N")
                 {
-                    cout<<nombre1<<", quiere cambiar la carta embaucadora?"<<endl;
-                    cout<<"(S/N): ";
+                    cout<<nombre1<<", quiere cambiar la carta embaucadora? (S/N): ";
                     cin>>respuestaembauc;
                     if(respuestaembauc=="s"||respuestaembauc=="S"&&puntosacu[0]>20)
                     {
