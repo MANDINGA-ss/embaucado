@@ -258,10 +258,11 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     cout<<"========================================================================"<<endl<<endl;
     cout <<"RONDA       "<<nombre1<<"       "<<nombre2<<endl;
     cout<<"------------------------------------------------------------------------"<<endl<<endl;
-    ///muestra los puntajes de ambos jugadores en cada ronda
+    ///sus puntajes x cada ronda
     for(int x=0;x<3;x++){
         cout<<x+1<<"           "<<puntJ1[x]<<"       "<<puntJ2[x]<<endl;
-        ///puntaje total de cada jugador
+        
+        ///puntaje total
         acumulador1+=puntJ1[x];
         acumulador2+=puntJ2[x];
 
