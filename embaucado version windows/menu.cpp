@@ -196,8 +196,6 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
                         auxembauc=palo[numerorandom(tam2)];
                     }
                 }
-                ///rlutil::cls();
-                ///system("cls");
             }
 
     /// empieza la ronda y el i es para que marque el numero de ronda con el reloj del for
