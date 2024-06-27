@@ -234,8 +234,8 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
         cout<<"puntos del jugador 2: "<<puntosacu[1]<<endl;
         cout<<"===================="<<endl<<endl;
         cout<<"CARTA EMBAUCADORA: " << auxembauc<<endl<<endl;
-        system("pause");
-        system("cls");
+        //system("pause");
+        //system("cls");
 
 }
     ///rlutil::anykey();
