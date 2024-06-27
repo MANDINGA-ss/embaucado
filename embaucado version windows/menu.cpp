@@ -139,7 +139,7 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     cout<<"Estos son los nombres que elegiste:"<<endl;
     cout<<"Jugador 1: "<<nombre1<<endl;
     cout<<"Jugador 2: "<<nombre2<<endl << endl;
-    cout<<"Confirmar nombres? (S/N): ";
+    cout<<"¿Confirmar nombres? (S/N): ";
     cin>>respuesta;
     ///rlutil::cls();
     system("cls");
