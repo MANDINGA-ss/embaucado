@@ -240,24 +240,6 @@ int juego(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
         system("cls");
 
 }
-///luego de que termina el for de 3 muestra el ganador
-    cout<<"==================================="<<endl;
-    cout<<"GANADOR                            "<<endl;
-    cout<<"el ganador es: ";
-    if (puntosacu[0]>puntosacu[1])
-    {
-        cout<<nombre1<<endl;
-    cout<<"==================================="<<endl;
-        cout<<"con "<<puntosacu[0]<<" puntos"<<endl;
-    cout<<"==================================="<<endl;
-    }
-    else
-    {
-        cout<<nombre2<<endl;
-    cout<<"==================================="<<endl;
-        cout<<"con "<<puntosacu[1]<<" puntos"<<endl;
-    cout<<"==================================="<<endl;
-    }
     ///rlutil::anykey();
     system("pause");
     return 0;
@@ -271,26 +253,55 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     int acumulador1=0;
     int acumulador2=0;
 
+    int mejorRonda1=0;
+    int mejorRonda2=0;
+
     cout<<"EMBAUCADO"<<endl;
     cout<<"========================================================================"<<endl<<endl;
     cout <<"RONDA       "<<nombre1<<"       "<<nombre2<<endl;
     cout<<"------------------------------------------------------------------------"<<endl<<endl;
+    ///muestra los puntajes de ambos jugadores en cada ronda
     for(int x=0;x<3;x++){
         cout<<x+1<<"           "<<puntJ1[x]<<"       "<<puntJ2[x]<<endl;
+        ///puntaje total de cada jugador
         acumulador1+=puntJ1[x];
         acumulador2+=puntJ2[x];
+
+        ///mejor ronda
+        if(puntJ1[x]>mejorRonda1){
+            mejorRonda1=puntJ1[x];
+
+        }
+        if(puntJ2[x]>mejorRonda2){
+            mejorRonda2=puntJ2[x];
+        }
     }
+    ///ganador
     cout<<"------------------------------------------------------------------------"<<endl;
     cout<<"TOTAL       "<<acumulador1<<"       "<<acumulador2<<endl<<endl;
     if(acumulador1>acumulador2){
         cout<<"GANADOR: "<<nombre1<<" con "<<acumulador1<<" puntos de victoria."<<endl<<endl;
     }
-    else{
+    else if(acumulador2>acumulador1){
         cout<<"GANADOR: "<<nombre2<<" con "<<acumulador2<<" puntos de victoria."<<endl<<endl;
+    }
+    else if(acumulador1==acumulador2){
+        if(mejorRonda1>mejorRonda2){
+        cout<<"GANADOR: "<<nombre1<<" con "<<mejorRonda1<<" puntos en una ronda."<<endl;
+        }
+        else if(acumulador1==acumulador2){
+        if(mejorRonda2>mejorRonda1){
+        cout<<"GANADOR: "<<nombre2<<" con "<<mejorRonda2<<" puntos en una ronda."<<endl;
+        }
+        else{
+        cout<<"EMPATE! No hay ganador."<<endl;
+        }
+        }
     }
     cout<<"Presione 0 para continuar...";
     cin>>cero;
     if(cero==0){
+        ///rlutil::cls();
         system("cls");
     }
 }
