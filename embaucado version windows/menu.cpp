@@ -11,12 +11,10 @@ void menu ()
 {
     string nombre1, nombre2;
     int puntJ1[3], puntJ2[3];
-
+    int opcion;
     char confirmacion;
-
-    int opcion=7;
-
-   while (opcion!=0){
+    
+   do{
 
     cout<<"EMBAUCADO"<<endl;
     cout<<"======================="<<endl;
@@ -42,15 +40,17 @@ void menu ()
         break;
 
     case 0:
-
         cout<<"¿Esta seguro que quiere salir del juego? (S/N): ";
         cin>>confirmacion;
         if(confirmacion=='S'||confirmacion=='s'){
-                rlutil::cls();
-        ///system("cls");
-        cout << "Gracias por jugar nuestro juego! Presione una tecla para continuar." << endl;
-
-        return;
+            rlutil::cls();
+            ///system("cls");
+            cout << "Gracias por jugar nuestro juego! Presione una tecla para continuar." << endl;
+            return;
+        }
+        else{
+            rlutil::cls();
+            cout<<"Volviendo al menu principal..."<<endl<<endl;
         }
         break;
 
@@ -58,14 +58,13 @@ void menu ()
 
         rlutil::cls();
         ///system("cls");
-        rlutil::anykey("Opcion incorrecta. Intente de nuevo.");
-        ///system("pause");
-
-        cout << endl << endl;
-
+        cout<<"Opcion incorrecta, intente de nuevo"<<endl<<endl;
         break;
+
         }
     }
+
+    while(true);
 }
 ///----------------------------------------------------------------------------------------
 
