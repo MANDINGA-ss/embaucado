@@ -71,8 +71,8 @@ void creditos()
     cout << " Laborde        Tomas       28895" << endl;
     cout << " Alderete       Kevin       30199" << endl;
     cout << "  Cayo          Nicole      30283" << endl << endl;
-    cout <<"Numero del grupo: 3"<<endl;
-    cout<<"------------------------------------------------------------------------"<<endl;
+    cout <<"Numero del grupo: 3"<< endl;
+    cout <<"------------------------------------------------------------------------"<< endl;
 
     ///rlutil::anykey();
 
