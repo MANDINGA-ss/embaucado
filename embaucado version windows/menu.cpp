@@ -12,6 +12,8 @@ void menu ()
     string nombre1, nombre2;
     int puntJ1[3], puntJ2[3];
 
+    char confirmacion;
+
     int opcion=7;
 
    while (opcion!=0){
@@ -25,8 +27,8 @@ void menu ()
     cout<<"0 - Salir"<<endl << endl;
     cout << "Ingrese una opción: ";
     cin>>opcion;
-    ///rlutil::cls();
-    system("cls");
+    rlutil::cls();
+    ///system("cls");
     switch (opcion)
     {
     case 1:
@@ -40,18 +42,24 @@ void menu ()
         break;
 
     case 0:
-        ///rlutil::cls();
-        system("cls");
+
+        cout<<"¿Esta seguro que quiere salir del juego? (S/N): ";
+        cin>>confirmacion;
+        if(confirmacion=='S'||confirmacion=='s'){
+                rlutil::cls();
+        ///system("cls");
         cout << "Gracias por jugar nuestro juego! Presione una tecla para continuar." << endl;
 
         return;
+        }
+        break;
 
     default:
 
-        ///rlutil::cls();
-        system("cls");
-        ///rlutil::anykey("Opcion incorrecta. Intente de nuevo.");
-        system("pause");
+        rlutil::cls();
+        ///system("cls");
+        rlutil::anykey("Opcion incorrecta. Intente de nuevo.");
+        ///system("pause");
 
         cout << endl << endl;
 
