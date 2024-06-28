@@ -286,6 +286,7 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
     ///ganador
     cout<<"------------------------------------------------------------------------"<<endl;
     cout<<"TOTAL       "<<acumulador1<<"       "<<acumulador2<<endl<<endl;
+    
     if(acumulador1>acumulador2){
         cout<<"GANADOR: "<<nombre1<<" con "<<acumulador1<<" puntos de victoria."<<endl<<endl;
     }
@@ -293,16 +294,15 @@ int estadisticas(string &nombre1, string &nombre2, int puntJ1[], int puntJ2[])
         cout<<"GANADOR: "<<nombre2<<" con "<<acumulador2<<" puntos de victoria."<<endl<<endl;
     }
     else if(acumulador1==acumulador2){
+
         if(mejorRonda1>mejorRonda2){
         cout<<"GANADOR: "<<nombre1<<" con "<<mejorRonda1<<" puntos en una ronda."<<endl;
         }
-        else if(acumulador1==acumulador2){
-        if(mejorRonda2>mejorRonda1){
+        else if(mejorRonda2>mejorRonda1){
         cout<<"GANADOR: "<<nombre2<<" con "<<mejorRonda2<<" puntos en una ronda."<<endl;
         }
         else{
         cout<<"EMPATE! No hay ganador."<<endl;
-        }
         }
     }
     cout<<"Presione 0 para continuar...";
